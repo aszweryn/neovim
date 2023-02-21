@@ -6,7 +6,6 @@ lsp.ensure_installed({
 	'gopls',
 	'pyright',
 	'clangd',
-	'sumneko_lua',
 	'tsserver',
 	'eslint',
 })
