@@ -3,6 +3,9 @@ vim.cmd("packadd packer.nvim")
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
+	-- Tmux-Neovim integration
+	use { "alexghergh/nvim-tmux-navigation" }
+
 	-- Syntax highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
