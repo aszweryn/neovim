@@ -6,12 +6,6 @@ vim.keymap.set("n", "<leader>qa", "<cmd>:qa!<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Navigate between splits
-vim.keymap.set("n", "<M-h>", "<C-w>h")
-vim.keymap.set("n", "<M-j>", "<C-w>j")
-vim.keymap.set("n", "<M-k>", "<C-w>k")
-vim.keymap.set("n", "<M-l>", "<C-w>l")
-
 -- Split keybindings
 vim.keymap.set("n", "<leader>sh", "<cmd>split<CR>")
 vim.keymap.set("n", "<leader>sv", "<cmd>vertical split<CR>")
