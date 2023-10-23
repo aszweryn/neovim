@@ -5,6 +5,15 @@ vim.opt.listchars:append "tab:➙ "
 vim.opt.listchars:append "trail:⋅"
 vim.opt.listchars:append "lead:⋅"
 
-require("indent_blankline").setup {
-	space_char_blankline = " ",
+local highlight = {
+    "CursorColumn",
+    "Whitespace",
+}
+require("ibl").setup {
+    indent = { highlight = highlight, char = "" },
+    whitespace = {
+        highlight = highlight,
+        remove_blankline_trail = false,
+    },
+    scope = { enabled = false },
 }
