@@ -65,4 +65,3 @@ vim.keymap.set("n", "<leader>ud", "<cmd>UndotreeToggle<cr>")
 -- Git diff view
 vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<cr>")
 ------------------------------------------------------------
-

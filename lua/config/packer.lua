@@ -4,18 +4,18 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use { 'alexghergh/nvim-tmux-navigation', config = function()
-	        require'nvim-tmux-navigation'.setup {
-	            disable_when_zoomed = true, -- defaults to false
-	            keybindings = {
-	                left = "<C-h>",
-	                down = "<C-j>",
-	                up = "<C-k>",
-	                right = "<C-l>",
-	                last_active = "<C-\\>",
-	                next = "<C-Space>",
-	            }
-	        }
-	    end
+		require'nvim-tmux-navigation'.setup {
+			disable_when_zoomed = true,
+			keybindings = {
+				left = "<C-h>",
+				down = "<C-j>",
+				up = "<C-k>",
+				right = "<C-l>",
+				last_active = "<C-\\>",
+				next = "<C-Space>",
+			}
+		}
+		end
 	}
 
 	-- Syntax highlighting
@@ -38,9 +38,6 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-
-	-- GitHub Copilot
-	use {'github/copilot.vim'}
 
 	-- LSP config
 	use {
@@ -88,11 +85,6 @@ return require('packer').startup(function(use)
 
 	-- Listchars, indentation helper
 	use 'lukas-reineke/indent-blankline.nvim'
-
-	-- Legend of commands, functions, etc.
-	use({
-		'mrjones2014/legendary.nvim'
-	})
 
 	-- Themes
 	use 'catppuccin/nvim'
