@@ -1,3 +1,4 @@
+-- for ease of use
 local set = vim.opt
 set.guicursor = ""
 
@@ -5,7 +6,7 @@ set.guicursor = ""
 set.nu = true
 set.relativenumber = true
 
--- all the tabs shenanigans
+-- default tab settings
 set.expandtab = false
 set.smarttab = true
 set.shiftwidth = 4
@@ -38,5 +39,13 @@ set.undofile = true
 -- looks nice
 set.termguicolors = true
 set.laststatus = 3
-
 vim.g.mapleader = " "
+
+-- for specific spacing behaviour
+vim.cmd[[
+    augroup FileTypeTabs
+        autocmd!
+        autocmd FileType lua,yaml lua require('tabber').set_tab_options()
+    augroup END
+]]
+
