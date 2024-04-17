@@ -1,8 +1,10 @@
 vim.cmd("packadd packer.nvim")
 
 return require('packer').startup(function(use)
+	-- Packer itself
 	use 'wbthomason/packer.nvim'
 
+	-- Improved navigation w/ tmux
 	use { 'alexghergh/nvim-tmux-navigation', config = function()
 		require'nvim-tmux-navigation'.setup {
 			disable_when_zoomed = true,
@@ -17,6 +19,9 @@ return require('packer').startup(function(use)
 		}
 		end
 	}
+
+	-- Github Copilot
+	use { 'github/copilot.vim' }
 
 	-- Syntax highlighting
 	use {
