@@ -1,5 +1,8 @@
 local set = vim.opt
+
 set.guicursor = ""
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- relative numeration of lines
 set.nu = true

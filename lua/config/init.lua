@@ -1,5 +1,5 @@
 require("config.set")
-require("config.packer")
+require("config.lazy")
 require("config.treesitter")
 require("config.nvim-tree")
 require("config.indent-blankline")
