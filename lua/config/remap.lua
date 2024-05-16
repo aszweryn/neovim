@@ -52,9 +52,6 @@ vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep hidden=true<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers hidden=true<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags hidden=true<cr>")
 
--- Packer
-vim.keymap.set("n", "<leader>qq", "<cmd>PackerSync<CR>")
-
 -- Nvim-tree
 vim.keymap.set("n", "<leader>nf", "<cmd>NvimTreeFocus<CR>")
 vim.keymap.set("n", "<leader>nt", "<cmd>NvimTreeToggle<CR>")

@@ -1,5 +1,6 @@
 require("config.set")
 require("config.lazy")
+require("config.nvim-tmux")
 require("config.treesitter")
 require("config.nvim-tree")
 require("config.indent-blankline")
