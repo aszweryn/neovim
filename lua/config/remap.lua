@@ -1,4 +1,5 @@
 -----------------------GENERALS-----------------------------
+
 -- Exit all without saving
 vim.keymap.set("n", "<leader>qa", "<cmd>:qa!<CR>")
 
@@ -21,10 +22,12 @@ vim.keymap.set("n", "<leader>lc", "<cmd>set list!<CR>")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+
 ------------------------------------------------------------
 
 
 ------------------------TEXT EDITION------------------------
+
 -- Move highlighted parts of code
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -42,10 +45,12 @@ vim.keymap.set("n", "<leader>fr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 -- Paste over without buffer change
 vim.keymap.set("n", "<leader>p", "\"_dP")
+
 ------------------------------------------------------------
 
 
 ----------------------PLUGIN RELATED------------------------
+
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep hidden=true<cr>")
