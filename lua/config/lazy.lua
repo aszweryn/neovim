@@ -36,26 +36,14 @@ require('lazy').setup({
 	},
 
 	-- LSP config
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{
-		'VonHeikemen/lsp-zero.nvim',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
-
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'},
-		}
+		'neovim/nvim-lspconfig',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/nvim-cmp',
+		'L3MON4D3/LuaSnip',
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
 	},
 
 	-- Git diff
