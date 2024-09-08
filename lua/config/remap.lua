@@ -68,13 +68,7 @@ vim.keymap.set("n", "<leader>ud", "<cmd>UndotreeToggle<cr>")
 vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<cr>")
 
 -- Disable cmp tab mapping (Copilot fix)
-vim.keymap.set('i', '<Tab>', '<Nop>', { noremap = true, silent = true })
-vim.keymap.set('i', '<S-Tab>', '<Nop>', { noremap = true, silent = true })
-
--- Setup GitHub Copilot mappings
-vim.keymap.set('i', '<Tab>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false
-})
+--vim.keymap.set('i', '<Tab>', '<Nop>', { noremap = true, silent = true })
+--vim.keymap.set('i', '<S-Tab>', '<Nop>', { noremap = true, silent = true })
 
 ------------------------------------------------------------

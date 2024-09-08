@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -15,9 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	-- Improved navigation w/ tmux
 	{ 'alexghergh/nvim-tmux-navigation' },
-
-	-- Github Copilot
-	{ 'github/copilot.vim' },
 
 	-- Syntax highlighting
 	{ 'nvim-treesitter/nvim-treesitter' },--, build = ':TSUpdate' },
@@ -45,6 +42,12 @@ require('lazy').setup({
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
 	},
+
+	-- Better integration with Helm
+    {
+        'towolf/vim-helm',
+        ft = { 'helm' },
+    },
 
 	-- Git diff
 	{
