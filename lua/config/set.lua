@@ -8,8 +8,8 @@ vim.g.maplocalleader = " "
 set.nu = true
 set.relativenumber = true
 
--- all the tabs shenanigans
-set.expandtab = false
+-- all tabs shenanigans
+set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4

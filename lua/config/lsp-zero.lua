@@ -1,6 +1,7 @@
 vim.g.lsp_zero_extend_lspconfig = 0
 
 local lsp_zero = require('lsp-zero')
+lsp_zero.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
