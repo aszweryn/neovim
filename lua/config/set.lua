@@ -11,9 +11,9 @@ set.relativenumber = true
 -- all tabs shenanigans
 set.expandtab = true
 set.smarttab = true
-set.shiftwidth = 4
-set.tabstop = 4
-set.softtabstop = 4
+set.shiftwidth = 2
+set.tabstop = 2
+set.softtabstop = 2
 
 -- nowrap, smart whitespaces
 set.smartindent = true
@@ -42,4 +42,13 @@ set.undofile = true
 set.termguicolors = true
 set.laststatus = 3
 
-vim.g.mapleader = " "
+-- Autocommand group to ensure line numbers are always enabled
+vim.api.nvim_create_augroup('LineNumberSettings', { clear = true })
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = 'LineNumberSettings',
+  pattern = '*',
+  callback = function()
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+  end,
+})
