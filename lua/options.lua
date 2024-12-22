@@ -5,9 +5,6 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.relativenumber = true
 
--- Disable mouse mode
--- vim.o.mouse = ''
-
 -- Enable break indent
 vim.o.breakindent = true
 
