@@ -16,25 +16,20 @@ vim.opt.rtp:prepend(lazypath)
 vim.o.termguicolors = true
 
 require('lazy').setup({
-  {
   -- Improved navigation w/ tmux
   { 'alexghergh/nvim-tmux-navigation' },
 
-    'MeanderingProgrammer/markdown.nvim',
-    main = "render-markdown",
-    opts = {},
-    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you use the mini.nvim suite
-  },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
+
   {
     "mistricky/codesnap.nvim",
     build = "make",
   },
+
   {
     "NeogitOrg/neogit",
     lazy = false,
@@ -45,6 +40,7 @@ require('lazy').setup({
     },
     config = true
   },
+
   -- {
   --   'Exafunction/codeium.vim',
   --   event = "InsertEnter",
@@ -56,14 +52,27 @@ require('lazy').setup({
   --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
   --   end
   -- },
+
   'onsails/lspkind.nvim',
+
+  -- Markdown preview plugin
+  {
+    'MeanderingProgrammer/markdown.nvim',
+    main = "render-markdown",
+    opts = {},
+    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you use the mini.nvim suite
+  },
+
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+
   "preservim/vim-pencil",
+
   {
     "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
@@ -72,10 +81,14 @@ require('lazy').setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+
   },
+
   'folke/zen-mode.nvim',
+
   'tpope/vim-obsession',
-  -- Tree
+
+  -- Treesitter
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -94,8 +107,11 @@ require('lazy').setup({
   },
 
   'ThePrimeagen/git-worktree.nvim',
+
   "tpope/vim-surround",
+
   'xiyaowong/nvim-transparent',
+
   {
     'rmagatti/goto-preview',
     config = function()
@@ -183,8 +199,11 @@ require('lazy').setup({
   },
 
   'ray-x/go.nvim',
+
   'ray-x/guihua.lua',
+
   { "catppuccin/nvim", as = "catppuccin" },
+
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
@@ -275,7 +294,9 @@ require('lazy').setup({
     "rcarriga/nvim-dap-ui",
     dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
   },
+
   'theHamsta/nvim-dap-virtual-text',
+
   'leoluz/nvim-dap-go',
 
   -- Git related plugins
@@ -283,19 +304,24 @@ require('lazy').setup({
   'lewis6991/gitsigns.nvim',
 
   'nvim-lualine/lualine.nvim', -- Fancier statusline
+
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
   {
     'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines 
     event = { "BufRead", "BufNewFile" },
     config = true
   },
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-telescope/telescope-symbols.nvim',
+
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+
   {
     "folke/twilight.nvim",
     ft = "markdown",
@@ -305,6 +331,7 @@ require('lazy').setup({
       -- refer to the configuration section below
     }
   },
+
   -- Listchars, indentation helper
   'lukas-reineke/indent-blankline.nvim',
 })
