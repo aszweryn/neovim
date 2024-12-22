@@ -88,6 +88,13 @@ require('lazy').setup({
 
   'tpope/vim-obsession',
 
+  {
+    'nvim-tree/nvim-web-devicons',
+    config = function()
+        require('nvim-web-devicons').setup { default = true }
+    end,
+  },
+
   -- Treesitter
   {
     "nvim-tree/nvim-tree.lua",
