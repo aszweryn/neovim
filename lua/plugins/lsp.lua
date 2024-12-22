@@ -57,7 +57,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'pyright', 'gopls', 'yamlls' }
+local servers = { 'pyright', 'gopls', 'yamlls', 'gitlab_ci_ls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
@@ -107,6 +107,11 @@ require('lspconfig').lua_ls.setup {
       telemetry = { enable = false },
     },
   },
+}
+
+require('lspconfig').gitlab_ci_ls.setup {
+    filetypes = { 'yaml', 'gitlab-ci' }, -- Associate with YAML and GitLab CI files
+    root_dir = require('lspconfig.util').root_pattern('.gitlab-ci.yml', '.git/'), -- Define project root
 }
 
 vim.api.nvim_create_autocmd('FileType', {
