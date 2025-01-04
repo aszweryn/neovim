@@ -2,7 +2,6 @@ require('plugins.lazy')
 require('options')
 require('keymaps')
 require('misc')
-
 require('plugins.misc')
 require('plugins.lualine')
 require('plugins.listchars')
@@ -16,7 +15,3 @@ require('plugins.zenmode')
 require('plugins.neogit')
 require('plugins.harpoon')
 require('plugins.tmux')
---require('plugins.obsidian')
---require('plugins.codesnap')
-
--- vim: ts=8 sts=2 sw=2 et

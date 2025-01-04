@@ -1,4 +1,3 @@
--- Install lazylazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,13 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Fixes Notify opacity issues
-vim.o.termguicolors = true
-
 require('lazy').setup({
   -- Improved navigation w/ tmux
   { 'alexghergh/nvim-tmux-navigation' },
 
+  -- Navigating w/ marks
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
