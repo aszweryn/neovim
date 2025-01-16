@@ -20,11 +20,12 @@ vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
 -- Diagnostic signs
 -- https://github.com/folke/trouble.nvim/issues/52
 local signs = {
-    Error = " ",
-    Warning = " ",
-    Hint = " ",
-    Information = " "
+    Error = " ",        -- Bold cross (clear and bold for errors)
+    Warning = " ",      -- Warning triangle (universal warning sign)
+    Hint = "󰌵 ",        -- Lightbulb (indicates a suggestion or hint)
+    Information = " "  -- Information circle (common info symbol)
 }
+
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
