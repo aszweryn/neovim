@@ -1,36 +1,34 @@
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("git_worktree")
 
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
 require("telescope").setup {
   defaults = {
-    layout_strategy = "horizontal",
+    hidden = true,
+    path_display = { "smart" },
+    sorting_strategy = "ascending",
+    scroll_strategy = "cycle",
     layout_config = {
-      preview_width = 0.65,
-      horizontal = {
-        size = {
-          width = "95%",
-          height = "95%",
-        },
-      },
+      prompt_position = "bottom",
     },
-  pickers = {
-    find_files = {
-      theme = "dropdown",
-    }
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+        hidden = true,
+      }
+    },
   },
-    mappings = {
-      i = {
-        ["<C-j>"] = require("telescope.actions").move_selection_next,
-        ["<C-k>"] = require("telescope.actions").move_selection_previous,
-      },
-    },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
   },
 }
 
 -- Enable telescope fzf native, if installed
-pcall(require("telescope").load_extension, "fzf")
+require("telescope").load_extension("fzf")
 
 -- Fuzy finder in current buffer
 vim.keymap.set("n", "<leader>/", function()
