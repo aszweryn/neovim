@@ -105,6 +105,23 @@ require('lspconfig').lua_ls.setup {
   },
 }
 
+require('lspconfig').yamlls.setup {
+  root_dir = require('lspconfig').util.root_pattern('.git', '*.yaml'),
+  settings = {
+    yaml = {
+      customTags = {
+        "!reference sequence",
+        "!reference mapping",
+        "!reference scalar"
+      },
+      schemas = {
+        ["./**/*.yaml"] = "*.yaml",
+      },
+      validate = true,
+    },
+  },
+}
+
 require('lspconfig').gitlab_ci_ls.setup {
     filetypes = { 'yaml', 'gitlab-ci' }, -- Associate with YAML and GitLab CI files
     root_dir = require('lspconfig.util').root_pattern('.gitlab-ci.yml', '.git/'), -- Define project root
