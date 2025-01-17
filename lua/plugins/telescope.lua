@@ -5,7 +5,7 @@ require("telescope").setup {
   defaults = {
     hidden = true,
     path_display = { "smart" },
-    sorting_strategy = "ascending",
+    -- sorting_strategy = "ascending",
     scroll_strategy = "cycle",
     layout_config = {
       prompt_position = "bottom",
