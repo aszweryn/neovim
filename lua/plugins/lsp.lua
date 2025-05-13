@@ -58,6 +58,7 @@ local servers = { 'pyright', 'gopls', 'yamlls', 'gitlab_ci_ls' }
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
   ensure_installed = servers,
+  automatic_enable = false,
 }
 
 -- nvim-cmp supports additional completion capabilities
