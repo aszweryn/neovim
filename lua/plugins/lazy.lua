@@ -232,13 +232,19 @@ require("lazy").setup({
     event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip"
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function()
       -- nvim-cmp setup
       local cmp = require "cmp"
       local luasnip = require "luasnip"
+
+      -- Load snippets from friendly-snippets
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         view = {
@@ -279,6 +285,8 @@ require("lazy").setup({
         sources = {
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "path" },
+          { name = "buffer" },
           { name = "neorg" },
         },
       })

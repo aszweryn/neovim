@@ -2,6 +2,7 @@ require('cmp').setup {
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
 
       cmp.setup({
         view = {
@@ -40,9 +41,21 @@ require('cmp').setup {
           end, { 'i', 's' }),
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = "neorg" },
+          { name = 'nvim_lsp', priority = 1000 },
+          { name = 'luasnip', priority = 750 },
+          { name = 'path', priority = 500 },
+          { name = 'buffer', priority = 250 },
+          { name = "neorg", priority = 750 },
+        },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            before = function(entry, vim_item)
+              return vim_item
+            end
+          })
         },
       })
     end
