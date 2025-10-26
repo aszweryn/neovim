@@ -12,6 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  config = function()
+    require("keymaps")
+  end,
   -- Improved navigation w/ tmux
   { "alexghergh/nvim-tmux-navigation" },
 
@@ -98,14 +101,12 @@ require("lazy").setup({
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = true,
-    requires = {
+    lazy = false,
+    dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require("nvim-tree").setup({
-        vim.api.nvim_set_keymap("n", "nt", ":NvimTreeToggle<enter>", { noremap=false })
-      })
+      require("nvim-tree").setup({})
     end,
   },
 
@@ -322,11 +323,8 @@ require("lazy").setup({
 
   -- Fuzzy Finder (files, lsp, etc)
   { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { "nvim-telescope/telescope-symbols.nvim" },
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable "make" == 1 },
 
   -- Listchars, indentation helper
   { "lukas-reineke/indent-blankline.nvim" },

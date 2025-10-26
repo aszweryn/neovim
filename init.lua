@@ -1,6 +1,5 @@
 require('plugins.lazy')
 require('options')
-require('keymaps')
 require('misc')
 require('plugins.misc')
 require('plugins.lualine')

@@ -52,5 +52,4 @@ vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>",
 vim.keymap.set("v", "<leader>cs", "<cmd>CodeSnap<CR>")
 
 -- Twilight
-vim.keymap.set("n", "tw", ":Twilight<enter>")
-
+nvim.keymap.set("n", "tw", ":Twilight<enter>")
